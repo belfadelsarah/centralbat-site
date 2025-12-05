@@ -1,0 +1,54 @@
+:root {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #1f2a35;
+  --accent: #1f6feb;
+  --muted: #6b7280;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0f13;
+  --card: #0f1720;
+  --text: #e6eef8;
+  --accent: #60a5fa;
+  --muted: #9aa6b2;
+}
+
+body {
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+.container { max-width:1000px; margin:0 auto; padding:20px; }
+
+.site-header { background: linear-gradient(90deg, var(--accent), #234a6b); color:white; padding:18px 0; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.brand { display:flex; align-items:center; gap:12px; }
+.logo { width:56px; height:56px; object-fit:contain; border-radius:6px; }
+.site-header h1 { margin:0; font-size:20px; }
+.tagline { text-align:center; margin:6px 0 18px; opacity:0.95; }
+
+.card { background: var(--card); padding:20px; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); margin-bottom:18px; }
+.services .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+.service { padding:14px; border-radius:8px; background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent); text-align:center; }
+
+.thumbs { display:flex; gap:10px; flex-wrap:wrap; }
+.thumb { width:150px; height:90px; background:var(--muted); color:white; display:flex; align-items:center; justify-content:center; border-radius:6px; }
+
+.contact-form { display:grid; gap:10px; max-width:560px; }
+.contact-form label { display:flex; flex-direction:column; font-size:14px; }
+.contact-form input, .contact-form textarea { padding:10px; border-radius:6px; border:1px solid rgba(0,0,0,0.08); background:transparent; color:var(--text); }
+.btn { padding:10px 14px; border-radius:8px; border:none; cursor:pointer; }
+.primary { background:var(--accent); color:white; }
+
+.site-footer { padding:12px 0; text-align:center; margin-top:18px; color:var(--muted); }
+
+.flashes { margin-bottom:10px; }
+.flash.success { background:#d1fae5; padding:8px; border-radius:6px; color:#065f46; }
+.flash.error { background:#fee2e2; padding:8px; border-radius:6px; color:#991b1b; }
+
+/* responsive */
+@media (max-width:700px) {
+  .header-inner { flex-direction:column; align-items:flex-start; gap:8px; }
+}
